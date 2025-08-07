@@ -8,6 +8,11 @@ const app = express();
 app.use(express.json());
 app.use("/", schoolRoutes);
 
+app.get("/", (req, res) => {
+  res.send("School Management API is running!");
+});
+
+
 const PORT = process.env.PORT || 5010;
 console.log("DB_USER =", process.env.DB_USER);
 console.log("DB_USER =", process.env.DB_PASSWORD);
